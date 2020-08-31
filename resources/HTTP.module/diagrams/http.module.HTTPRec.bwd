@@ -1,0 +1,29 @@
+<process-dir height="412" id="http.module.HTTPRec" name="http.module.HTTPRec" type="process" width="609" x="140" y="20">
+<ProcessInfo createdBy="Sony" createdOn="Mon Aug 31 16:11:12 IST 2020" description="" modifiedBy="" modifiedOn="" modifiers="public" productVersion="2.5.4 V57 2020-08-14" scalable="true" singleton="true" stateless="true" type="IT"/>
+<link-dir id="26960b30-1b3d-4fd1-8cc0-e0abe83db175" label="" linkType="SUCCESS" name="HTTPReceiverToSendHTTPResponse" points="[[148,93],[250,93]]" source="8f296ee2-f849-4cf8-b150-05b49b54b6ed" target="705df354-b7f8-4d73-98df-6106162615ce"/>
+<activity-dir height="48" id="8f296ee2-f849-4cf8-b150-05b49b54b6ed" name="HTTPReceiver" type="bw.http.HTTPReceiver" width="48" x="99" y="69">
+<BWActivity activityTypeID="bw.http.HTTPReceiver" version="6.0.0.20132205">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/http#//HTTPReceiver"/>
+<value customId="" defaultEncoding="ISO8859_1" httpConnection="httpConnectorResource" outputHeadersQName="ActivityOutputType:headersType" outputStyle="String" sequencingKey="" type="http:HTTPReceiver">
+<httpParameters parameterName="Number1"/>
+<httpParameters parameterName="Number2"/>
+</value>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+<activity-dir height="48" id="705df354-b7f8-4d73-98df-6106162615ce" name="SendHTTPResponse" type="bw.http.sendHTTPResponse" width="48" x="250" y="69">
+<inputBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+705df354-b7f8-4d73-98df-6106162615ce+ResponseActivityInput&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;HTTPReceiver&quot;/&gt;&lt;xsl:template name=&quot;SendHTTPResponse-input&quot; match=&quot;/&quot;&gt;&lt;tns:ResponseActivityInput&gt;&lt;asciiContent&gt;&lt;xsl:value-of select=&quot;xsd:integer($HTTPReceiver/parameters/Number1) + xsd:integer($HTTPReceiver/parameters/Number2)&quot;/&gt;&lt;/asciiContent&gt;&lt;/tns:ResponseActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<partBinding expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+705df354-b7f8-4d73-98df-6106162615ce+ResponseActivityInput&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;&lt;xsl:param name=&quot;HTTPReceiver&quot;/&gt;&lt;xsl:template name=&quot;SendHTTPResponse-input&quot; match=&quot;/&quot;&gt;&lt;tns:ResponseActivityInput&gt;&lt;asciiContent&gt;&lt;xsl:value-of select=&quot;xsd:integer($HTTPReceiver/parameters/Number1) + xsd:integer($HTTPReceiver/parameters/Number2)&quot;/&gt;&lt;/asciiContent&gt;&lt;/tns:ResponseActivityInput&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;"/>
+<BWActivity activityTypeID="bw.http.sendHTTPResponse" version="6.0.0.20132205">
+<activityConfig>
+<properties name="config" type="activityconfig:EMFProperty">
+<type href="http://ns.tibco.com/bw/palette/http#//SendHTTPResponse"/>
+<value closeConnection="true" inputHeadersQName="ResponseActivityInput:headersType" replyFor="HTTPReceiver" type="http:SendHTTPResponse"/>
+</properties>
+</activityConfig>
+</BWActivity>
+</activity-dir>
+</process-dir>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: HTTP.module
+Bundle-ManifestVersion: 2
+TIBCO-BW-Edition: bwcf
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.pal
+ ette; filter:="(name=bw.http)",com.tibco.bw.sharedresource.model; fil
+ ter:="(name=bw.httpclient)",com.tibco.bw.sharedresource.model; filter
+ :="(name=bw.httpconnector)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 2.5.4 V57 2020-08-14
+Bundle-Name: HTTP Module
+Bundle-Version: 1.0.0.20200831170845
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+
